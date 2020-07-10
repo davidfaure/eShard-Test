@@ -4,17 +4,31 @@ import Maze from "./Maze"
 import generateMaze from "./generateMaze"
 
 import "./App.css"
+import DimensionChoice from "./components/DimensionChoice"
+import { connect } from "react-redux"
 
-const maze = generateMaze()
+// const maze = generateMaze()
 
-function App() {
-  console.log(maze)
+function App( {dimension} ) {
+  // console.log(maze)
+  console.log(dimension.width)
 
   return (
     <div className="App">
-      <Maze maze={maze} />
+    {dimension.width > 0 && dimension.height > 0 ? (
+      <Maze />
+    )
+    :
+    (
+      <DimensionChoice />
+    )
+    }
     </div>
   )
 }
 
-export default App
+const mapStateToProps = (state) => ({
+  dimension: state.dimensions
+});
+
+export default connect(mapStateToProps)(App);
