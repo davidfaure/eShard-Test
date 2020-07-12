@@ -1,17 +1,12 @@
 import React from "react"
 
 import Maze from "./Maze"
-import generateMaze from "./generateMaze"
 
 import "./App.css"
 import DimensionChoice from "./components/DimensionChoice"
 import { connect } from "react-redux"
 
-// const maze = generateMaze()
-
 function App( {dimension} ) {
-  // console.log(maze)
-  console.log(dimension.width)
 
   return (
     <div className="App">
