@@ -1,0 +1,5 @@
+.BoardGame {
+  position: relative;
+  z-index: 0;
+  margin: auto;
+}
