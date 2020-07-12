@@ -9,6 +9,9 @@ function Maze({ maze }) {
     if (cell.isEntrance) {
       return images.stairsUp
     }
+    if (cell.isExit) {
+      return images.stairsDown
+    }
     return cell.passable ? images.floor : images.wall
 
   }
