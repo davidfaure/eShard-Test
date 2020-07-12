@@ -19,7 +19,6 @@ const DimensionChoice = ({ dispatch }) => {
 
   const handleChoice = (e) => {
     e.preventDefault();
-    console.log(inputDim.width);
     dispatch(setDimension({
       width: inputDim.width, 
       height: inputDim.height

@@ -1,13 +1,11 @@
 import React from "react"
-import generateMaze from "./generateMaze"
-
 import * as images from "./images"
 import "./Maze.css"
 import { connect } from "react-redux"
 
 function Maze({ maze }) {
 
-  // const maze = generateMaze()
+  console.log(maze);
   return (
     <div className="Maze">
       {maze && maze.tiles.map(row => (

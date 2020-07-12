@@ -9,6 +9,7 @@ const initialState = {
   },
   maze: null,
   isLoading: false,
+  isEntrance: false,
 }
 
 const reducer = (state = initialState, action) => {
