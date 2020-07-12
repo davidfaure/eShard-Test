@@ -6,5 +6,10 @@ export default function generateMaze({ width, height}) {
     .using(RandomizedPrim)
     .build()
 
-  return new Amazer(config).generate()
+  const maze = new Amazer(config).generate()
+
+  const entrance = { isEntrance: true };
+  maze.tiles[0][0] = Object.assign({}, maze.tiles[0][0], entrance);
+
+  return maze;
 }
