@@ -1,12 +1,14 @@
 import React from "react"
-
 import * as images from "./images"
 import "./Maze.css"
+import { connect } from "react-redux"
 
 function Maze({ maze }) {
+
+  console.log(maze);
   return (
     <div className="Maze">
-      {maze.tiles.map(row => (
+      {maze && maze.tiles.map(row => (
         <div className="Maze-row">
           {row.map(cell => (
             <img src={cell.passable ? images.floor : images.wall} alt="" />
@@ -17,4 +19,8 @@ function Maze({ maze }) {
   )
 }
 
-export default Maze
+const mapStateToProps = (state) => ({
+  maze: state.maze,
+})
+
+export default connect(mapStateToProps)(Maze);
