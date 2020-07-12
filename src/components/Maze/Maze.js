@@ -1,5 +1,5 @@
 import React from "react"
-import * as images from "./images"
+import * as images from "../../images"
 import "./Maze.css"
 import { connect } from "react-redux"
 
@@ -13,10 +13,11 @@ function Maze({ maze }) {
       return images.stairsDown
     }
     return cell.passable ? images.floor : images.wall
-
   }
 
-  console.log(maze);
+  const passable = maze.tiles.map(element => element.filter(element2 => Object.values(element2).includes("Floor")));
+  console.log(passable.map(element => element));
+
   return (
     <div className="Maze">
       {maze && maze.tiles.map(row => (
