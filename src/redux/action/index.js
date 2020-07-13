@@ -29,5 +29,10 @@ export const downArrow = () => {
   }
 }
 
+export const initialisePlayer = () => {
+  return {
+    type: 'INITIALIZE_PLAYER'
+  }
+}
 
 

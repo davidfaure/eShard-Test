@@ -14,9 +14,7 @@ export default function generateMaze({ width, height}) {
   //set entrance
   maze.tiles[0][0] = Object.assign({}, maze.tiles[0][0], entrance);
 
-
   //function to set exit 
-
   const area = maze.tiles;
   const rightColumn = area.length -2;
   const rightColumnData = area[rightColumn].map(element => element)
@@ -42,10 +40,6 @@ export default function generateMaze({ width, height}) {
    //Set exit 
   const [indexColumn, index] = getRightColumn(area);
   area[indexColumn][index] = Object.assign({},area[indexColumn][index], exit)
-
-  // const tryMaze = area.map(element => element.map(element2 => element2 = Object.assign({}, element2, player)))
-  // const tryObject = area.map(element => element.map(element2 => element2 = Object.defineProperty(element2, 'isPlayer', {value: false})))
-  // console.log(tryObject);
 
   return maze;
 }

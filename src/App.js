@@ -13,19 +13,19 @@ const ZoomDiv = styled.div`
   animation: 1s ${zoomAnimation};
 `;
 
-function App( { top, left, dimension, dispatch, maze } ) {
+function App( { top, left, dimension, dispatch } ) {
 
 const [ready, setReady] = useState(false);
 const maxWidth = 32 * dimension.width
 const maxHeight = 32 * (dimension.height-1)
 
- const appRef = useRef(null)
+const appRef = useRef(null)
 
- useEffect(() => {
-   if(appRef.current) {
-    appRef.current.focus();
-   }
- }, [appRef])
+useEffect(() => {
+  if(appRef.current) {
+  appRef.current.focus();
+  }
+}, [appRef])
 
   const handleKeyPress = (e) => {
     switch(e.key) {
