@@ -1,4 +1,4 @@
-import { Amazer, AmazerBuilder, RandomizedPrim, Tile } from "amazer"
+import { Amazer, AmazerBuilder, RandomizedPrim } from "amazer"
 
 export default function generateMaze({ width, height}) {
   const config = new AmazerBuilder()
@@ -10,7 +10,6 @@ export default function generateMaze({ width, height}) {
 
   const entrance = { isEntrance: true };
   const exit = { isExit: true};
-  // const player = { isPlayer: false};
 
   //set entrance
   maze.tiles[0][0] = Object.assign({}, maze.tiles[0][0], entrance);
