@@ -1,6 +1,6 @@
 import React, { useReducer, useState } from 'react';
 import { connect } from 'react-redux';
-import { setDimension } from '../redux/action';
+import { setDimension, initialisePlayer } from '../redux/action';
 import styled, { keyframes } from 'styled-components';
 import { zoomIn } from 'react-animations';
 import './DimensionChoice.css';
@@ -43,14 +43,9 @@ const DimensionChoice = ({ dispatch }) => {
         width: inputDim.width, 
         height: inputDim.height
       }));
+      dispatch(initialisePlayer());
     }
-    // const { error } = inputDim
-    // if (error.lenght > 0) {
-
-    // }
   }
-
-  console.log(inputDim)
 
   return(
     <ZoomDiv className="DimensionChoice">
