@@ -1,7 +1,5 @@
 const { default: generateMaze } = require("../../generateMaze");
 
-// import { generateMaze } from '../../generateMaze';
-
 const initialState = {
   dimensions: {
     width: '',

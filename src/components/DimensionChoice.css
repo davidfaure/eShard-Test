@@ -1,0 +1,72 @@
+.DimensionChoice {
+  display: flex;
+  flex-direction: column;
+  margin:100px;
+  width: 580px;
+  /* max-width: 80%; */
+  min-width: 100px;
+  min-height: 400px;
+  padding: 20px 40px;
+  border-radius: 6px;
+  box-shadow: -1px 1px 20px 0px rgba(0,0,0,0.75);
+  /* background-color: #fefefe; */
+}
+
+.DimensionChoice > h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  margin-top: 0.25em;
+  margin-bottom: 20px ;
+}
+
+.DimensionChoice form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.DimensionChoice label {
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.DimensionChoice input {
+  padding: 10px 10px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid #d6d1d5;
+}
+
+.DimensionChoice .Submit {
+  display: flex;
+  justify-content: center;
+}
+
+.DimensionChoice button {
+  min-width: 30%;
+  cursor: pointer;
+  margin-right: 0.25em;
+  margin-top: 20px;
+  padding: 	0.938em;
+  border: none;
+  border-radius: 30px;
+  background-color: #10AC84;
+  color: #fefefe;
+  font-size: 1rem;
+}
+
+.DimensionChoice .Hauteur,
+.DimensionChoice .Largeur {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.DimensionChoice .error {
+  align-self: center;
+  color: red;
+}

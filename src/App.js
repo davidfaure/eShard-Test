@@ -1,9 +1,17 @@
-import React, {useRef, useEffect, useState} from "react"
+import React, {useRef, useEffect, useState} from "react";
 import { leftArrow, rightArrow, upArrow, downArrow } from './redux/action';
-import "./App.css"
-import DimensionChoice from "./components/DimensionChoice"
-import { connect } from "react-redux"
-import BoardGame from "./components/BoardGame/BoardGame"
+import "./App.css";
+import DimensionChoice from "./components/DimensionChoice";
+import styled, { keyframes } from 'styled-components';
+import { zoomIn } from 'react-animations';
+import { connect } from "react-redux";
+import BoardGame from "./components/BoardGame/BoardGame";
+
+const zoomAnimation = keyframes`${zoomIn}`;
+
+const ZoomDiv = styled.div`
+  animation: 1s ${zoomAnimation};
+`;
 
 function App( { top, left, dimension, dispatch, maze } ) {
 
@@ -49,7 +57,7 @@ const maxHeight = 32 * (dimension.height-1)
       tabIndex="-1">
     {dimension.width > 0 && dimension.height > 0 ? (
       <>
-      {!ready && <div>Cliquez pour commencer !</div>}
+      {!ready && <ZoomDiv className="start-game">Cliquez pour commencer !</ZoomDiv>}
       <BoardGame />
       </>
     ):(<DimensionChoice />)
