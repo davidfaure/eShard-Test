@@ -163,6 +163,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         player: {
           ...state.player,
+          skin: action.payload.skin,
           position: [0, 0]
         }
       }

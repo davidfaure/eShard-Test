@@ -18,7 +18,6 @@ const TadaDiv = styled.div`
 `;
 
 const BoardGame = ({ hasWin }) => {
-  console.log(hasWin);
   return (
     <>
       <FlipDiv className="BoardGame">
@@ -32,9 +31,9 @@ const BoardGame = ({ hasWin }) => {
       >
         <TadaDiv className="ModalTricky-Container">
           <div className="Modal-Container">
-            <h1>FÉLICITATIONS</h1>
+            <h1>FÉLICITATIONS !...</h1>
             <h2>
-              Vous avez trouver la sortie du labyrinthe !
+              Vous avez trouvé la sortie du labyrinthe !
             </h2>
             <button type="button" onClick={() => window.location.reload()}>
               Recommencez
