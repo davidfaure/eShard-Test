@@ -7,12 +7,12 @@ function Maze({ maze }) {
 
   const getImg = (cell) => {
     if (cell.isEntrance) {
-      return images.stairsUp
+      return images.entrance
     }
     if (cell.isExit) {
-      return images.stairsDown
+      return images.exit
     }
-    return cell.passable ? images.floor : images.wall
+    return cell.passable ? images.greenFloor : images.newWall
   }
 
   return (
