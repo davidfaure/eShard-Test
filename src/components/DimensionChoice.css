@@ -31,6 +31,7 @@
   margin-right: 0.5em;
   font-weight: 600;
   font-size: 1rem;
+  text-align: center;
 }
 
 .DimensionChoice input {
@@ -38,6 +39,18 @@
   border-radius: 8px;
   outline: none;
   border: 1px solid #d6d1d5;
+}
+
+.DimensionChoice select  {
+  padding: 10px 10px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid #d6d1d5;
+  width: 167px;
+}
+
+select#hero option[value="dragon"] {
+  background-image: url('../images/dragon.png');
 }
 
 .DimensionChoice .Submit {
@@ -59,7 +72,8 @@
 }
 
 .DimensionChoice .Hauteur,
-.DimensionChoice .Largeur {
+.DimensionChoice .Largeur,
+.DimensionChoice .Choice {
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -69,4 +83,36 @@
 .DimensionChoice .error {
   align-self: center;
   color: red;
+}
+
+.DimensionChoice .Hero-Checkbox-Container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.DimensionChoice .Hero-Checkbox-Container .Hero-Image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+}
+
+.Choice label {
+  margin-bottom: 20px;
+}
+
+.Hero-Checkbox-Label {
+  margin: 20px 0px;
+}
+
+.Hero-Checkbox-Label label {
+  margin: 0px !important;
+  align-self: center;
+}
+
+.Hero-Image img {
+  margin: 0px 0px 20px 0px;
 }
