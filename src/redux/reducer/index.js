@@ -8,6 +8,7 @@ const initialState = {
   },
   maze: null,
   isLoading: false,
+  hasWon: false,
   top: 32,
   left: 0,
   player: {
@@ -19,6 +20,29 @@ const initialState = {
 
 
 const reducer = (state = initialState, action) => {
+
+  const Exit = () => {
+
+    const row = state.player.position[0];
+    const column = state.player.position[1];
+
+    if (row > 0 && column > 0) {
+      if  (
+          (state.maze.tiles[row][column + 1].isExit) || 
+          (state.maze.tiles[row][column - 1].isExit) ||
+          (state.maze.tiles[row + 1][column].isExit) ||
+          (state.maze.tiles[row - 1][column].isExit)
+          ) {
+        return true;
+      } else {
+        return state.hasWon
+      }
+    } else {
+      return state.hasWon
+    }
+
+
+  }
 
   const GoingRight = () => {
 
@@ -145,6 +169,7 @@ const reducer = (state = initialState, action) => {
     case 'ARROW_LEFT':
       return {
         ...state,
+        hasWon: Exit(),
         left : MoveLeft(),
         player: {
           ...state.player,
@@ -154,6 +179,7 @@ const reducer = (state = initialState, action) => {
     case 'ARROW_RIGHT':
       return {
         ...state,
+        hasWon: Exit(),
         left : MoveRight(),
         player: {
           ...state.player,
@@ -163,6 +189,7 @@ const reducer = (state = initialState, action) => {
     case 'ARROW_UP':
       return {
         ...state,
+        hasWon: Exit(),
         top : MoveUp(),
         player: {
           ...state.player,
@@ -172,6 +199,7 @@ const reducer = (state = initialState, action) => {
     case 'ARROW_DOWN':
       return {
         ...state,
+        hasWon: Exit(),
         top : MoveDown(),
         player: {
           ...state.player,
