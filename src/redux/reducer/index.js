@@ -1,5 +1,4 @@
-import playerImg from '../../images/player.png';
-const { default: generateMaze } = require("../../generateMaze");
+const { default: generateMaze } = require("../../components/Maze/generateMaze");
 
 const initialState = {
   dimensions: {
@@ -7,12 +6,11 @@ const initialState = {
     height: '',
   },
   maze: null,
-  isLoading: false,
   hasWon: false,
   top: 32,
   left: 0,
   player: {
-    skin: playerImg,
+    skin: '',
     step: 32,
     position: []
   }
@@ -155,7 +153,6 @@ const reducer = (state = initialState, action) => {
           width: action.payload.width,
           height: action.payload.height,
         },
-        isLoading: true,
         maze: generateMaze({width: action.payload.width, height: action.payload.height}),
       };
     case 'INITIALIZE_PLAYER':
