@@ -1,7 +1,7 @@
 import React, {useRef, useEffect, useState} from "react";
 import { leftArrow, rightArrow, upArrow, downArrow } from './redux/action';
 import "./App.css";
-import DimensionChoice from "./components/DimensionChoice";
+import DimensionChoice from "./components/DimensionChoice/DimensionChoice";
 import styled, { keyframes } from 'styled-components';
 import { zoomIn } from 'react-animations';
 import { connect } from "react-redux";
@@ -70,7 +70,6 @@ const mapStateToProps = (state) => ({
   dimension: state.dimensions,
   top: state.top,
   left: state.left,
-  maze: state.maze
 });
 
 export default connect(mapStateToProps)(App);

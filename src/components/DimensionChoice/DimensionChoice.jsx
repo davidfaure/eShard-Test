@@ -1,7 +1,7 @@
 import React, { useReducer, useState } from 'react';
-import * as images from "../images"
+import * as images from "../../images";
 import { connect } from 'react-redux';
-import { setDimension, initialisePlayer } from '../redux/action';
+import { setDimension, initialisePlayer } from '../../redux/action';
 import styled, { keyframes } from 'styled-components';
 import { zoomIn } from 'react-animations';
 import './DimensionChoice.css';
